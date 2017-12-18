@@ -1,0 +1,32 @@
+Ce fichier est une ébauche de la structure générale de l'app
+
+Model
+
+	DataBase.class.php
+		Constructeur
+		Getter et Setter
+	Table.class.php
+		Constructeur
+		Getter et Setter
+	Row.class.php
+		Constructeur
+		Getter et Setter
+
+Controller
+
+	DataBaseController.class.php
+		addDataBase(), renameDataBase(), delDataBase(), statsDataBase() <- A voir celle-là.
+	TableController.class.php
+		addTable(), renameTable(), addColumn(), delColumn(), editColumn(), statsTable()
+	RowController.class.php
+		addRow(), delRow(), editRow()
+
+View
+	index.php
+	Connexion.php
+	Deconnexion.php
+	Accueil.php
+	Menu.php (genre le menu à gauche dans phpmyadmin)
+
+
+

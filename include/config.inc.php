@@ -3,7 +3,6 @@
 // A modifier en fonction de la configuration
 
 define('DBHOST', "localhost");
-define('DBNAME', "myblog");
 define('DBUSER', "bd");
 define('DBPASSWD', "bede");
 define('ENV','dev');
