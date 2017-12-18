@@ -15,9 +15,9 @@ Model
 Controller
 
 	DataBaseController.class.php
-		addDataBase(), renameDataBase(), delDataBase(), statsDataBase() <- A voir celle-là.
+		addDataBase(), renameDataBase(), delDataBase(), statsDataBase() cad nombre de tables, date de creation, espace memoire
 	TableController.class.php
-		addTable(), renameTable(), addColumn(), delColumn(), editColumn(), statsTable()
+		addTable(), renameTable(), addColumn(), delColumn(), editColumn(), statsTable() <- nombre de lignes
 	RowController.class.php
 		addRow(), delRow(), editRow()
 
