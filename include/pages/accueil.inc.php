@@ -1,0 +1,1 @@
+<img class="centreImage" src="image/boris.jpg" alt="My Blog" title="My Blog" width="38%"/>
