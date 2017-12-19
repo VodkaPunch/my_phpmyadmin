@@ -7,19 +7,19 @@
   <meta charset="utf-8">
 
 <?php
-		$title = "Bienvenue sur My Blog";?>
+		$title = "Bienvenue sur MyPhpMyAdmin";?>
 		<title>
 		<?php echo $title ?>
 		</title>
 
-<link rel="stylesheet" type="text/css" href="css/stylesheet.css" />
+<link rel="stylesheet" type="text/css" href="views/css/stylesheet.css" />
 </head>
 	<body>
 	<div id="header">	
 		<div id="entete">
 			<div class="colonne">
 				<a href="index.php?page=0">
-					<img src="image/boris.jpg" alt="Logo My blog" title="Logo My blog ETNA" width="30%" />
+					<img src="views/image/boris.jpg" alt="Logo My blog" title="Logo My blog ETNA" width="30%" />
 				</a>
 			</div>
 			<div class="colonne">

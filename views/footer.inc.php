@@ -1,6 +1,6 @@
 
 <div id="footer">
-My Blog
+My_PhpMyAdmin
 <br />
     © ETNA - Bachelor 2020
 

@@ -12,5 +12,14 @@ class DataBaseController{
 			PDO::PARAM_STR);
 		$req->execute();
 	}
-	
+	public function getList()
+	{
+		$sql = ('SHOW DATABASES');
+		$req = $this->db->query($sql);
+		while ($database=$req->fetch(PDO::FETCH_OBJ)){
+			$listedatabases[] = new DataBase($database);
+		}
+		$req->closeCursor();
+		return $listedatabases;
+	}
 }

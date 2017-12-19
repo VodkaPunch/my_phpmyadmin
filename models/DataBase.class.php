@@ -11,12 +11,12 @@ class DataBase{
 	public function affecte($donnees){
 		foreach ($donnees as $attribut => $valeur){
 			switch ($attribut) {
-				case 'db_name':
+				case 'Database':
 					$this->setDBName($valeur);
 					break;
-				case 'db_date':
+/*				case 'db_date':
 					$this->setDBDate($valeur);
-					break;
+					break;*/
 			}
 		}
 	}
@@ -28,11 +28,11 @@ class DataBase{
 	{
 		return $this->db_name;
 	}
-	public function setDBDate($db_date){
+/*	public function setDBDate($db_date){
 		$this->db_date=$db_date;
 	}
 	public function getDBDate()
 	{
 		return $this->db_date;
-	}
+	}*/
 }
