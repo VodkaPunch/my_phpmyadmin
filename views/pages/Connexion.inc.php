@@ -11,6 +11,7 @@ if (isset($_POST['login']) && isset($_POST['mdp'])) {
         $_SESSION['login'] = $login;
         $_SESSION['mdp'] = $mdp;
         $authOK = true;
+        $_SESSION['authOk'] = $authOK;
         $url='index.php?page=4';
         header("Location: $url");
     }
