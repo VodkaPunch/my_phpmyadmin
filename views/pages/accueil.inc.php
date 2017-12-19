@@ -1,1 +1,4 @@
-<img class="centreImage" src="image/boris.jpg" alt="My Blog" title="My Blog" width="38%"/>
+<?php
+	require_once('ajouterDataBase.inc.php');
+	require_once('supprimerDataBase.inc.php');
+?>
