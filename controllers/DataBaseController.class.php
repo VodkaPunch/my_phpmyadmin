@@ -20,6 +20,15 @@ class DataBaseController{
 		$req->execute();	
 	}
 
+	public function renameDataBase($old_db, $new_db){
+		exec('mysqldump -u'.DBUSER.' -p'.DBPASSWD.' '.$old_db.' > temp.sql');
+		$sql = ('CREATE DATABASE '.$new_db.' CHARACTER SET \'utf8\'');
+		$req = $this->db->query($sql);
+		exec('mysql --user='.DBUSER.' -p'.DBPASSWD.' '.$new_db.' < temp.sql');
+		$sql = ('DROP DATABASE '.$old_db.'');
+		$req = $this->db->query($sql);
+	}
+
 	public function getList()
 	{
 		$sql = ('SHOW DATABASES');

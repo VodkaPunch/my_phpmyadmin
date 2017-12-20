@@ -132,6 +132,15 @@ body{
 	text-align:center;
 }
 
+.predef_query {
+	margin: 20px;
+	padding: 10px;
+	border: solid #111 2px;
+	border-radius: 5px;
+	width: 35%;
+	text-align: center;
+}
+
 .centreImage {
     display: block;
     margin-left: auto;
