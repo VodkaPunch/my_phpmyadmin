@@ -20,7 +20,8 @@ class DataBaseController{
 		$req->execute();	
 	}
 
-	public function renameDataBase($old_db, $new_db){
+	public function renameDataBase($old_db, $new_db)
+	{
 		exec('mysqldump -u'.DBUSER.' -p'.DBPASSWD.' '.$old_db.' > temp.sql');
 		$sql = ('CREATE DATABASE '.$new_db.' CHARACTER SET \'utf8\'');
 		$req = $this->db->query($sql);
@@ -39,4 +40,14 @@ class DataBaseController{
 		$req->closeCursor();
 		return $listedatabases;
 	}
+
+	public function statsDataBase($db_name)
+	{
+		$sql = ('SELECT TABLE_NAME AS `nom_table`, ROUND(SUM(DATA_LENGTH + INDEX_LENGTH)/1024/1024,4) AS `size_mb`, CREATE_TIME AS `date_creation` FROM information_schema.TABLES WHERE TABLE_SCHEMA = "'.$db_name.'" GROUP BY TABLE_NAME, CREATE_TIME DESC');
+		$req = $this->db->query($sql);
+		while ($res=$req->fetch(PDO::FETCH_OBJ)){
+			$listetables[] = $res;
+		}
+		return $listetables;
+	}	
 }
