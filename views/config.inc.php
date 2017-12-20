@@ -3,6 +3,7 @@
 // A modifier en fonction de la configuration
 
 define('DBHOST', "localhost");
+define('DBNAME', "mysql");
 define('DBUSER', "root");
 define('DBPASSWD', "ourcq");
 define('ENV','dev');

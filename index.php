@@ -6,13 +6,8 @@ require_once("views/header.inc.php");
 ?>
 <div id="corps">
 <?php
-if ((isset($_SESSION['authOk'])) && ($_SESSION['authOk'] == TRUE)) {
-    require_once("views/listedb.inc.php");
-    require_once("views/texte.inc.php");
-}
-else {
-    require_once("views/pages/Connexion.inc.php");
-}
+//require_once("views/listedb.inc.php");
+require_once("views/texte.inc.php");
 ?>
 </div>
 
