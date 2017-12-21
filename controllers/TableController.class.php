@@ -4,29 +4,23 @@ class TableController{
 	{
 		$this->db = $db;
 	}
-	public function addTable($db_name)
+	public function addTable($table_name, $columns)
 	{
 		$req = $this->db->prepare(
-			'CREATE TABLE IF NOT EXISTS '.$db_name.'');
-		/*$req->bindValue(':db_name',$db_name,
-			PDO::PARAM_STR);*/
+			'CREATE TABLE IF NOT EXISTS '.$_SESSION["db"].'.'.$table_name.' ('.$columns.');');
 		$req->execute();
 	}
 
-	public function delTable($db_name)
+	public function delTable($table_name)
 	{
 		$req = $this->db->prepare(
-			'DROP TABLE '.$db_name.'');
+			'DROP TABLE '.$table_name.'');
 		$req->execute();	
 	}
 
 	public function renameTable($old_db, $new_db)
 	{
-		exec('mysqldump -u'.DBUSER.' -p'.DBPASSWD.' '.$old_db.' > temp.sql');
-		$sql = ('CREATE TABLE '.$new_db.' CHARACTER SET \'utf8\'');
-		$req = $this->db->query($sql);
-		exec('mysql --user='.DBUSER.' -p'.DBPASSWD.' '.$new_db.' < temp.sql');
-		$sql = ('DROP TABLE '.$old_db.'');
+		$sql = ('RENAME TABLE '.$_SESSION["db"].'.'.$old_db.' TO '.$_SESSION["db"].'.'.$new_db.'');
 		$req = $this->db->query($sql);
 	}
 

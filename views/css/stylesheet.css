@@ -77,6 +77,12 @@ body{
 	background-color:#EDEDED;
 }
 
+#menu_top {
+	margin: 20px;
+	border: solid #111 2px;
+	border-radius: 5px;
+}
+
 #menu{
 	float : left;
 	width: 20%;	
@@ -85,6 +91,14 @@ body{
 	color:#222222;
 	font-size:15px;
 }
+
+#menu_top ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	list-style-type: none;
+}
+
 #menu p{
 	font-weight:bold;
 }
@@ -139,6 +153,14 @@ body{
 	border-radius: 5px;
 	width: 35%;
 	text-align: center;
+}
+
+#ajout_colonne {
+	width: 70%;
+}
+
+.column_to_add {
+	margin: 10px;
 }
 
 .centreImage {
