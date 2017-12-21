@@ -13,7 +13,7 @@ case 0:
 	break;
 case 1:
 	// inclure ici la page ajouter ville
-	include("pages/ajouterArticle.inc.php");
+	include("pages/DB/DataBase.inc.php");
     break;
 case 2:
 // inclure ici la page lister  ville

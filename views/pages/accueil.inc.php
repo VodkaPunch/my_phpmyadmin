@@ -1,6 +1,4 @@
-<?php
-	require_once('ajouterDataBase.inc.php');
-	require_once('supprimerDataBase.inc.php');
-	require_once('renommerDataBase.inc.php');
-	require_once('statsDataBase.inc.php');
-?>
+<div class="menu">
+    <a href="index.php?page=1">Bases de données</a>
+    <a href="index.php?page=0">SQL</a>
+</div>
