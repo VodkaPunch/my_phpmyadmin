@@ -32,31 +32,21 @@ class TableController{
 
 	public function getList()
 	{
-		$sql = ('SHOW TABLES');
+		$sql = ('SELECT TABLE_NAME AS `Table` FROM information_schema.TABLES WHERE TABLE_SCHEMA = "'.$_SESSION["db"].'" GROUP BY TABLE_NAME');
 		$req = $this->db->query($sql);
-		while ($table=$req->fetch(PDO::FETCH_OBJ)){
-			$listetables[] = new Table($table);
+		while ($res=$req->fetch(PDO::FETCH_OBJ)){
+			$listetables[] = new Table($res);
 		}
-		$req->closeCursor();
 		return $listetables;
 	}
 
 
 	public function countRows($table_name)
 	{
-		$req = $this->db->prepare(
-			'SELECT COUNT(*) FROM '.$table_name''); 
-		$req->execute(); 
-		$res = $req->fetchColumn(); 
-	}
+		$sql = ('SELECT TABLE_ROWS AS `Table` FROM information_schema.TABLES WHERE TABLE_SCHEMA = "'.$_SESSION["db"].'" AND TABLE_NAME = "'.$table_name.'"'); 
+		$req=$this->db->query($sql);
+		$res=$req->fetchColumn();
 
-	public function namesTable($db_name)
-	{
-		$sql = ('SELECT TABLE_NAME AS `nom_table` FROM information_schema.TABLES WHERE TABLE_SCHEMA = "'.$db_name.'" GROUP BY TABLE_NAME');
-		$req = $this->db->query($sql);
-		while ($res=$req->fetch(PDO::FETCH_OBJ)){
-			$listetables[] = $res;
-		}
-		return $listetables;
-	}	
+		return $res;
+	}
 }
