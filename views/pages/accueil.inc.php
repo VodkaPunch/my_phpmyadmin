@@ -1,3 +1,5 @@
+
+<h1>Accueil</h1>
 <div id="menu_top">
 	<ul>
     	<li><a href="index.php?page=1">Bases de données</a>

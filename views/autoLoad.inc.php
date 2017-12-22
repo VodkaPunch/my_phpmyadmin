@@ -2,10 +2,10 @@
 function __autoload($className){
 
 	$repClasses = array(
-        'C:\wamp64\www\my_phpmyadmin/models/', 
-        'C:\wamp64\www\my_phpmyadmin/controllers/'
+        PATH_INSTALL.'my_phpmyadmin/models/', 
+        PATH_INSTALL.'my_phpmyadmin/controllers/'
     );
-
+	
     # Count the total item in the array.
     $total_paths = count($repClasses);
 
