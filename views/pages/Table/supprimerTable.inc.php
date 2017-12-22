@@ -1,14 +1,14 @@
 <?php
   $db = new Mypdo();
-  $controller = new DataBaseController($db);
+  $controller = new TableController($db);
 ?>
 <div class="predef_query">
   <?php 
-  if(empty($_POST["db_name_del"])){?>
-  <label>Supprimer une BD : </label><select name="db_name_del" form="del_form">
-  	<?php $listeDataBases = $controller->getList();
-    	foreach ($listeDataBases as $database) { ?>
-    		<option value="<?php echo $database->getDBName(); ?>"><?php echo $database->getDBName(); ?></option>
+  if(empty($_POST["table_name_del"])){?>
+  <label>Supprimer une table : </label><select name="table_name_del" form="del_form">
+  	<?php $listeTables = $controller->getList();
+    	foreach ($listeTables as $table) { ?>
+    		<option value="<?php echo $table->getTableName(); ?>"><?php echo $table->getTableName(); ?></option>
     	<?php
     	} ?>
     </select>	
@@ -17,8 +17,8 @@
     </form>
     <?php }
    	else {
-   		$controller->delDataBase($_POST['db_name_del']);
-   		echo "<h2>La base ".$_POST['db_name_del']." a été supprimée !</h2>";
+   		$controller->delTable($_POST['table_name_del']);
+   		echo "<h2>La table ".$_POST['table_name_del']." a été supprimée !</h2>";
    }
    ?>
 </div>

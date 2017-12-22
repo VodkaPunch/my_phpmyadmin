@@ -5,7 +5,7 @@
 <div class="predef_query">
   <?php 
   if(empty($_POST["table_name_old"])){?>
-  <label>Renommer la BD : </label><select name="table_name_old" form="rename_form">
+  <label>Renommer la table : </label><select name="table_name_old" form="rename_form">
     <?php $listeTables = $controller->getList();
       foreach ($listeTables as $table) { ?>
         <option value="<?php echo $table->getTableName(); ?>"><?php echo $table->getTableName(); ?></option>

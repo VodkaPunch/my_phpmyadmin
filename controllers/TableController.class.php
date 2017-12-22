@@ -14,7 +14,7 @@ class TableController{
 	public function delTable($table_name)
 	{
 		$req = $this->db->prepare(
-			'DROP TABLE '.$table_name.'');
+			'DROP TABLE '.$_SESSION["db"].'.'.$table_name.'');
 		$req->execute();	
 	}
 
@@ -22,6 +22,20 @@ class TableController{
 	{
 		$sql = ('RENAME TABLE '.$_SESSION["db"].'.'.$old_db.' TO '.$_SESSION["db"].'.'.$new_db.'');
 		$req = $this->db->query($sql);
+	}
+
+	public function addColumn($table_name, $columns)
+	{
+		$req = $this->db->prepare(
+			'ALTER TABLE '.$_SESSION["db"].'.'.$table_name.' ADD '.$columns.';');
+		$req->execute();
+	}
+
+	public function modColumn($table_name, $old_column, $columns)
+	{
+		$req = $this->db->prepare(
+			'ALTER TABLE '.$_SESSION["db"].'.'.$table_name.' CHANGE '.$old_column.' '.$columns.';');
+		$req->execute();
 	}
 
 	public function getList()
@@ -34,6 +48,15 @@ class TableController{
 		return $listetables;
 	}
 
+	public function getColumns($table_name)
+	{
+		$sql =('SHOW COLUMNS FROM '.$_SESSION["db"].'.'.$table_name.'');
+		$req = $this->db->query($sql);
+		while ($res=$req->fetch(PDO::FETCH_OBJ)){
+			$listecolumns[] = $res;
+		}
+		return $listecolumns;
+	}
 
 	public function countRows($table_name)
 	{
