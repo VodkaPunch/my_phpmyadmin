@@ -5,13 +5,10 @@
 define('DBHOST', "localhost");
 define('DBNAME', "mysql");
 define('DBUSER', "root");
-<<<<<<< HEAD
 define('DBPASSWD', "root");
-=======
-define('DBPASSWD', "ourcq");
->>>>>>> origin/login
+define('DBPASSWD', "root");
 define('ENV','dev');
-define('PATH_INSTALL', '/var/www/html/workspace/etna/');
+define('PATH_INSTALL', 'C:\wamp64\www\my_phpmyadmin');
 // pour un environememnt de production remplacer 'dev' (développement) par 'prod' (production)
 // les messages d'erreur du SGBD s'affichent dans l'environememnt dev mais pas en prod
 ?>
